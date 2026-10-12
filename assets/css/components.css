@@ -30,6 +30,10 @@
   font-size: 1.0625rem;
 }
 
+.btn--block {
+  width: 100%;
+}
+
 /* Primary: #c93f22 — the lightest coral that passes 4.5:1 with white text. */
 .btn--primary {
   background-color: #c93f22;
@@ -76,7 +80,6 @@
 .btn--ghost:hover .icon {
   transform: translateX(4px);
 }
-
 .btn--ghost:hover {
   color: var(--coral-600);
 }
@@ -99,6 +102,10 @@
 .icon--sm {
   width: 16px;
   height: 16px;
+}
+
+.icon--flip {
+  transform: rotate(180deg);
 }
 
 /* ---------- Cards ---------- */

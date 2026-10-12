@@ -330,6 +330,20 @@ body::after {
   color: var(--ink-400);
 }
 
+.footnote--gap {
+  margin-top: var(--space-4);
+}
+
+/* Centered section header variant (FAQ, pricing FAQ). */
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-head--center p {
+  margin-inline: auto;
+}
+
 /* ---------- Calculator ---------- */
 
 .calc {

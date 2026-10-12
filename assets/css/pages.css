@@ -18,6 +18,23 @@
   color: var(--ink-600);
 }
 
+/* First line (eyebrow/badge) keeps its distance from the H1. */
+.page-hero p:first-child {
+  margin-bottom: var(--space-4);
+}
+
+.section--flush-top {
+  padding-top: 0;
+}
+
+.demo-title {
+  font-size: var(--text-h2);
+}
+
+.pricing-card__name {
+  font-size: var(--text-h3);
+}
+
 /* ---------- Billing toggle ---------- */
 
 .billing-toggle {

@@ -9,9 +9,7 @@
       content="Three plans from $29/mo. One recovered appointment a week usually covers it. 14-day free trial, no card."
     />
     <meta name="theme-color" content="#0E3B34" />
-    <script>
-      document.documentElement.classList.add("js");
-    </script>
+    <script src="assets/js/js-class.js"></script>
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
@@ -227,11 +225,11 @@
         </div>
       </section>
 
-      <section class="section" style="padding-top: 0" aria-label="Plans">
+      <section class="section section--flush-top" aria-label="Plans">
         <div class="container">
           <div class="grid grid--3 pricing-grid">
             <article class="card pricing-card">
-              <h2 style="font-size: var(--text-h3)">Starter</h2>
+              <h2 class="pricing-card__name">Starter</h2>
               <p class="pricing-card__price">
                 <span class="price-swap" data-price data-monthly="29" data-annual="24">$29</span><small>/mo</small>
               </p>
@@ -260,7 +258,7 @@
             </article>
             <article class="card pricing-card pricing-card--popular">
               <p><span class="badge badge--coral">Most popular</span></p>
-              <h2 style="font-size: var(--text-h3)">Growth</h2>
+              <h2 class="pricing-card__name">Growth</h2>
               <p class="pricing-card__price">
                 <span class="price-swap" data-price data-monthly="79" data-annual="66">$79</span><small>/mo</small>
               </p>
@@ -288,7 +286,7 @@
               </p>
             </article>
             <article class="card pricing-card">
-              <h2 style="font-size: var(--text-h3)">Pro</h2>
+              <h2 class="pricing-card__name">Pro</h2>
               <p class="pricing-card__price">
                 <span class="price-swap" data-price data-monthly="159" data-annual="132">$159</span><small>/mo</small>
               </p>
@@ -429,7 +427,7 @@
               </tbody>
             </table>
           </details>
-          <p class="footnote" style="margin-top: 16px">*Fair use. Annual billing means 2 months free.</p>
+          <p class="footnote footnote--gap">*Fair use. Annual billing means 2 months free.</p>
 
           <div class="need-more">
             <h2>Need more than 5 locations?</h2>
@@ -441,7 +439,7 @@
 
       <section class="section section--alt" aria-labelledby="pricing-faq-title">
         <div class="container">
-          <div class="section-head" style="margin-inline: auto; text-align: center">
+          <div class="section-head section-head--center">
             <p class="eyebrow">Pricing FAQ</p>
             <h2 id="pricing-faq-title">Fair questions, straight answers.</h2>
           </div>
