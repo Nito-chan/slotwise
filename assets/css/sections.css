@@ -1228,11 +1228,13 @@ body::after {
   }
 }
 
-/* Hero loop toast + waitlist pill (created by main.js). */
+/* Hero loop toast + waitlist pill (created by main.js).
+   Bottom-right so they never cover the floating bubble card. */
 .hero-toast,
 .hero-pill {
   position: absolute;
-  top: 12px;
+  top: auto;
+  bottom: 12px;
   right: 12px;
   padding: 8px 14px;
   border-radius: var(--radius-pill);

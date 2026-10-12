@@ -121,6 +121,12 @@ button {
   border-radius: 4px;
 }
 
+/* The hidden attribute must always win: author display rules
+   (grid/flex cards, panels, chat screens) otherwise override it. */
+[hidden] {
+  display: none !important;
+}
+
 /* Anchors stop below the sticky nav. */
 [id] {
   scroll-margin-top: var(--anchor-offset);
