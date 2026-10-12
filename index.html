@@ -1,0 +1,1213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slotwise — Cut no-shows and refill empty slots automatically</title>
+    <meta
+      name="description"
+      content="Slotwise reminds your clients, refills cancelled slots from your waitlist, and wins back no-shows — automatically."
+    />
+    <meta name="theme-color" content="#0E3B34" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="canonical" href="https://slotwise.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Slotwise" />
+    <meta property="og:title" content="Slotwise — Cut no-shows and refill empty slots automatically" />
+    <meta
+      property="og:description"
+      content="Slotwise reminds your clients, refills cancelled slots from your waitlist, and wins back no-shows — automatically."
+    />
+    <meta property="og:url" content="https://slotwise.vercel.app/" />
+    <meta property="og:image" content="https://slotwise.vercel.app/assets/img/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Slotwise — fewer empty chairs, more booked days." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Slotwise — Cut no-shows and refill empty slots automatically" />
+    <meta
+      name="twitter:description"
+      content="Slotwise reminds your clients, refills cancelled slots from your waitlist, and wins back no-shows — automatically."
+    />
+    <meta name="twitter:image" content="https://slotwise.vercel.app/assets/img/og-image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <script type="module" defer src="assets/js/main.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do my clients need to download an app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. They reply to a message or tap a link. Nothing to install."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which calendars and booking tools does it connect to?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Google Calendar and Outlook today, plus CSV import and webhooks for anything else."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is WhatsApp allowed for reminders?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, using approved message templates through the official business channels."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does setup take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most businesses are live in an afternoon. Connect a calendar, set your timings, done."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I customize the messages?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Tone, wording, language and timing are all yours to set."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens to my clients' data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It's encrypted in transit and at rest. You can export or delete it any time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I cancel anytime?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. No contracts and no lock-in." }
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Slotwise",
+        "url": "https://slotwise.vercel.app/",
+        "logo": "https://slotwise.vercel.app/assets/img/favicon.svg"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Slotwise",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://slotwise.vercel.app/",
+        "description": "Automatic reminders, waitlist refills and win-backs for appointment-based local businesses.",
+        "offers": {
+          "@type": "Offer",
+          "price": "29",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-nav-sentinel aria-hidden="true"></div>
+
+    <div class="announce" data-announce>
+      <div class="announce__inner">
+        <p>New: WhatsApp reminders are live. <a href="#features">See how it works →</a></p>
+        <button
+          class="announce__close"
+          type="button"
+          data-announce-close
+          aria-label="Dismiss announcement"
+        >
+          <svg class="icon icon--sm" aria-hidden="true">
+            <use href="assets/icons/sprite.svg#x" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <header class="site-nav" data-site-nav>
+      <div class="container site-nav__inner">
+        <a class="brand" href="/" aria-label="Slotwise home">
+          <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="33" height="33" rx="9" fill="#0E3B34" />
+            <rect x="8" y="9" width="20" height="5" rx="2.5" fill="#FBF7F0" />
+            <rect x="8" y="15.5" width="20" height="5" rx="2.5" fill="#F4694C" />
+            <rect x="8" y="22" width="12" height="5" rx="2.5" fill="#D8EBE6" />
+          </svg>
+          <span class="brand__word" data-brand-name>Slotwise</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul class="site-nav__links">
+            <li><a class="site-nav__link" href="/#how">Product</a></li>
+            <li><a class="site-nav__link" href="/#industries">Industries</a></li>
+            <li><a class="site-nav__link" href="/pricing.html">Pricing</a></li>
+            <li><a class="site-nav__link" href="/#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-nav__actions">
+          <a class="site-nav__login" href="#">Log in</a>
+          <a class="btn btn--primary" href="/book-demo.html?plan=trial">Start free trial</a>
+        </div>
+
+        <button
+          class="site-nav__toggle"
+          type="button"
+          data-drawer-open
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+          aria-label="Open menu"
+        >
+          <svg class="icon" aria-hidden="true">
+            <use href="assets/icons/sprite.svg#menu" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="drawer" data-drawer hidden>
+      <div class="drawer__backdrop" data-drawer-backdrop></div>
+      <div
+        class="drawer__panel"
+        data-drawer-panel
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
+        id="mobile-drawer"
+      >
+        <div class="drawer__head">
+          <a class="brand" href="/" aria-label="Slotwise home">
+            <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+              <rect x="1.5" y="1.5" width="33" height="33" rx="9" fill="#0E3B34" />
+              <rect x="8" y="9" width="20" height="5" rx="2.5" fill="#FBF7F0" />
+              <rect x="8" y="15.5" width="20" height="5" rx="2.5" fill="#F4694C" />
+              <rect x="8" y="22" width="12" height="5" rx="2.5" fill="#D8EBE6" />
+            </svg>
+            <span class="brand__word" data-brand-name>Slotwise</span>
+          </a>
+          <button
+            class="drawer__close"
+            type="button"
+            data-drawer-close
+            aria-label="Close menu"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons/sprite.svg#x" />
+            </svg>
+          </button>
+        </div>
+        <nav class="drawer__nav" aria-label="Mobile">
+          <a class="drawer__link" href="/#how">Product</a>
+          <a class="drawer__link" href="/#industries">Industries</a>
+          <a class="drawer__link" href="/pricing.html">Pricing</a>
+          <a class="drawer__link" href="/#faq">FAQ</a>
+        </nav>
+        <div class="drawer__foot">
+          <a class="btn btn--primary btn--large" href="/book-demo.html?plan=trial"
+            >Start free trial</a
+          >
+          <a class="btn btn--secondary" href="#">Log in</a>
+        </div>
+      </div>
+    </div>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__blobs" aria-hidden="true"></div>
+        <div class="container split">
+          <div class="hero__copy">
+            <p><span class="badge">For clinics, salons &amp; studios</span></p>
+            <h1 id="hero-title">
+              Fewer empty chairs.
+              <span class="squiggle"
+                >More booked days.<svg
+                  viewBox="0 0 120 12"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 8C20 2 40 10 60 6s40-3 58 1"
+                    fill="none"
+                    stroke="#F4694C"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                  /></svg
+              ></span>
+            </h1>
+            <p class="hero__sub">
+              Slotwise reminds your clients, refills cancelled slots from your
+              waitlist, and wins back no-shows — automatically. Set up in an
+              afternoon.
+            </p>
+            <div class="hero__ctas">
+              <a class="btn btn--primary btn--large" href="/book-demo.html?plan=trial"
+                >Start free trial</a
+              >
+              <a class="btn btn--ghost btn--large" href="#how"
+                >See how it works
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#arrow-right" /></svg
+              ></a>
+            </div>
+            <ul class="micro-trust">
+              <li>
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#check" />
+                </svg>
+                14-day free trial
+              </li>
+              <li>
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#check" />
+                </svg>
+                No credit card
+              </li>
+              <li>
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#check" />
+                </svg>
+                Cancel anytime
+              </li>
+            </ul>
+          </div>
+          <div class="hero__visual">
+            <div class="schedule" role="img" aria-label="Illustration: today's schedule where a cancelled 10:30 slot is refilled by Ayesha M., recovering 85 dollars.">
+              <p class="schedule__title">Today's schedule</p>
+              <ul class="schedule__list">
+                <li class="slot slot--booked">
+                  <span class="slot__time">9:00</span><span>Booked</span>
+                </li>
+                <li class="slot slot--booked">
+                  <span class="slot__time">9:30</span><span>Booked</span>
+                </li>
+                <li class="slot slot--booked">
+                  <span class="slot__time">10:00</span><span>Booked</span>
+                </li>
+                <li class="slot slot--refilled">
+                  <span class="slot__time">10:30</span><span>Refilled · Ayesha M.</span>
+                  <svg class="icon icon--sm" aria-hidden="true">
+                    <use href="assets/icons/sprite.svg#sparkles" />
+                  </svg>
+                </li>
+                <li class="slot slot--booked">
+                  <span class="slot__time">11:00</span><span>Booked</span>
+                </li>
+                <li class="slot slot--booked">
+                  <span class="slot__time">11:30</span><span>Booked</span>
+                </li>
+              </ul>
+              <p class="recovered-tag">
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#check" />
+                </svg>
+                +$85 recovered
+              </p>
+            </div>
+            <p class="float-card float-card--bubble" aria-hidden="true">
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#message-circle" />
+              </svg>
+              Reply C to confirm ✓
+            </p>
+            <p class="float-card float-card--stat" aria-hidden="true">
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#check" />
+              </svg>
+              No-shows −38%
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust strip -->
+      <section class="section section--tight section--alt" aria-label="Who Slotwise is for">
+        <div class="container trust">
+          <p>Built for appointment-based businesses like</p>
+          <ul class="chip-row">
+            <li class="chip">
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#calendar-check" />
+              </svg>
+              Dental clinics
+            </li>
+            <li class="chip">
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#sparkles" />
+              </svg>
+              Hair &amp; beauty salons
+            </li>
+            <li class="chip">
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#users" />
+              </svg>
+              Gyms &amp; studios
+            </li>
+            <li class="chip">
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#shield-check" />
+              </svg>
+              Physio clinics
+            </li>
+            <li class="chip">
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#calendar" />
+              </svg>
+              Medical clinics
+            </li>
+            <li class="chip">
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#star" />
+              </svg>
+              Spas
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Problem -->
+      <section class="section" aria-labelledby="problem-title">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">The problem</p>
+            <h2 id="problem-title">Every empty slot is money walking out the door.</h2>
+          </div>
+          <div class="grid grid--3">
+            <article class="card">
+              <p class="stat-num">1 in 5</p>
+              <p class="text-secondary">appointments are missed or cancelled late.</p>
+            </article>
+            <article class="card">
+              <p class="stat-num">$150</p>
+              <p class="text-secondary">average revenue lost per missed appointment.</p>
+            </article>
+            <article class="card">
+              <p class="stat-num">6 hrs</p>
+              <p class="text-secondary">a week your front desk spends on reminder calls.</p>
+            </article>
+          </div>
+          <p class="problem-lead">
+            You could chase every client by hand. Or you could let Slotwise do it.
+          </p>
+          <p class="footnote">Illustrative figures for this concept project.</p>
+        </div>
+      </section>
+
+      <!-- Calculator -->
+      <section class="section section--alt" aria-labelledby="calc-title">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">The math</p>
+            <h2 id="calc-title">What are no-shows costing you?</h2>
+            <p>Move the sliders to match your week. The estimate updates instantly.</p>
+          </div>
+          <div class="calc" data-calculator>
+            <div class="calc__inputs">
+              <div class="calc__field">
+                <label class="calc__label" for="calc-appts">Appointments per week</label>
+                <div class="calc__control">
+                  <button class="stepper" type="button" data-calc-step="appts|-1" aria-label="Fewer appointments">−</button>
+                  <input
+                    type="range"
+                    id="calc-appts"
+                    min="10"
+                    max="400"
+                    step="1"
+                    value="80"
+                    aria-valuetext="80 per week"
+                  />
+                  <button class="stepper" type="button" data-calc-step="appts|1" aria-label="More appointments">+</button>
+                </div>
+                <p class="calc__value" data-calc-readout="appts">80 per week</p>
+              </div>
+              <div class="calc__field">
+                <label class="calc__label" for="calc-value">Average value per appointment</label>
+                <div class="calc__control">
+                  <button class="stepper" type="button" data-calc-step="value|-1" aria-label="Lower value">−</button>
+                  <input
+                    type="range"
+                    id="calc-value"
+                    min="10"
+                    max="500"
+                    step="5"
+                    value="90"
+                    aria-valuetext="$90"
+                  />
+                  <button class="stepper" type="button" data-calc-step="value|1" aria-label="Higher value">+</button>
+                </div>
+                <p class="calc__value" data-calc-readout="value">$90</p>
+              </div>
+              <div class="calc__field">
+                <label class="calc__label" for="calc-rate">Current no-show rate</label>
+                <div class="calc__control">
+                  <button class="stepper" type="button" data-calc-step="rate|-1" aria-label="Lower no-show rate">−</button>
+                  <input
+                    type="range"
+                    id="calc-rate"
+                    min="2"
+                    max="40"
+                    step="1"
+                    value="15"
+                    aria-valuetext="15 percent"
+                  />
+                  <button class="stepper" type="button" data-calc-step="rate|1" aria-label="Higher no-show rate">+</button>
+                </div>
+                <p class="calc__value" data-calc-readout="rate">15%</p>
+              </div>
+            </div>
+            <div>
+              <div class="calc__result" aria-live="polite">
+                <p class="calc__lost">
+                  You're losing about <strong data-calc-lost>$4,676 / month</strong>
+                </p>
+                <p class="calc__recovered">
+                  With Slotwise (est. −40% no-shows) you could recover
+                  <strong data-calc-recovered>$1,871 / month</strong>
+                </p>
+                <div class="calc__bars" aria-hidden="true">
+                  <p>Now</p>
+                  <p class="calc__bar calc__bar--now"><span></span></p>
+                  <p>With Slotwise</p>
+                  <p class="calc__bar calc__bar--after"><span></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="footnote" style="margin-top: 16px">
+            Estimate based on a modeled 40% reduction. Your results will vary.
+          </p>
+          <p class="calc__cta">
+            <a class="btn btn--primary" href="/book-demo.html?plan=trial"
+              >Start recovering that
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#arrow-right" /></svg
+            ></a>
+          </p>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="section" aria-labelledby="how-title" id="how">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">How it works</p>
+            <h2 id="how-title">Three steps. Zero chasing.</h2>
+          </div>
+          <div class="split">
+            <ol class="steps" data-steps>
+              <li class="step is-active">
+                <span class="step__marker" aria-hidden="true">1</span>
+                <button class="step__button" type="button" data-step="1">
+                  <h3>Connect your calendar</h3>
+                  <p>Link Google Calendar or your booking tool. Your appointments sync in seconds.</p>
+                </button>
+              </li>
+              <li class="step">
+                <span class="step__marker" aria-hidden="true">2</span>
+                <button class="step__button" type="button" data-step="2">
+                  <h3>Reminders go out by themselves</h3>
+                  <p>Friendly SMS, WhatsApp or email at the times you choose. Clients tap to confirm or reschedule.</p>
+                </button>
+              </li>
+              <li class="step">
+                <span class="step__marker" aria-hidden="true">3</span>
+                <button class="step__button" type="button" data-step="3">
+                  <h3>Empty slots refill, no-shows return</h3>
+                  <p>Cancellations are offered to your waitlist instantly. Missed visits get a kind nudge to rebook.</p>
+                </button>
+              </li>
+            </ol>
+            <div class="phone" data-chat-phone>
+              <div class="phone__screen">
+                <p class="phone__title">Slotwise</p>
+                <div class="connected" data-chat-screen="1">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="assets/icons/sprite.svg#calendar-check" />
+                  </svg>
+                  <p><strong>Calendar connected</strong></p>
+                  <p class="text-secondary">Google Calendar · 124 appointments synced</p>
+                </div>
+                <div class="chat" data-chat-screen="2" hidden>
+                  <p class="bubble bubble--in">Hi Sara! Reminder: Dental check-up tomorrow at 10:30. Reply C to confirm or R to reschedule.</p>
+                  <p class="bubble bubble--out">C</p>
+                  <p class="bubble bubble--in">Confirmed ✓ See you tomorrow!</p>
+                </div>
+                <div class="chat" data-chat-screen="3" hidden>
+                  <p class="bubble bubble--in">A 10:30 slot just opened today. Want it? Reply Y</p>
+                  <p class="bubble bubble--out">Y</p>
+                  <p class="bubble bubble--in">Booked ✓ You're in for 10:30.</p>
+                </div>
+                <p class="visually-hidden">
+                  Transcript: connect your calendar; clients confirm reminders by reply; waitlist offers refill cancelled slots.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section section--alt" aria-labelledby="features-title" id="features">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Features</p>
+            <h2 id="features-title">Everything the front desk wishes it had time for.</h2>
+            <p>Six quiet automations that run your front desk.</p>
+          </div>
+          <div class="grid grid--3">
+            <article class="card feature-card">
+              <p class="feature-card__icon" aria-hidden="true">
+                <svg class="icon"><use href="assets/icons/sprite.svg#message-circle" /></svg>
+              </p>
+              <h3>Smart reminders</h3>
+              <p>Multi-step reminders by SMS, WhatsApp and email at the times that work best.</p>
+              <a class="btn btn--ghost" href="#features">Learn more
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#arrow-right" /></svg
+              ></a>
+            </article>
+            <article class="card feature-card">
+              <p class="feature-card__icon" aria-hidden="true">
+                <svg class="icon"><use href="assets/icons/sprite.svg#check-circle" /></svg>
+              </p>
+              <h3>One-tap confirm &amp; reschedule</h3>
+              <p>Clients answer in one tap. No calls, no app to download.</p>
+              <a class="btn btn--ghost" href="#features">Learn more
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#arrow-right" /></svg
+              ></a>
+            </article>
+            <article class="card feature-card feature-card--wide">
+              <p class="feature-card__icon" aria-hidden="true">
+                <svg class="icon"><use href="assets/icons/sprite.svg#zap" /></svg>
+              </p>
+              <h3>Instant waitlist refill</h3>
+              <p>Cancelled slot? Next-in-line gets the offer in seconds.</p>
+              <ul class="mini-slots" aria-hidden="true">
+                <li class="slot slot--booked"><span class="slot__time">9:00</span><span>Booked</span></li>
+                <li class="slot slot--refilled">
+                  <span class="slot__time">10:30</span><span>Refilled</span>
+                  <svg class="icon icon--sm" aria-hidden="true">
+                    <use href="assets/icons/sprite.svg#sparkles" />
+                  </svg>
+                </li>
+                <li class="slot slot--open"><span class="slot__time">12:00</span><span>Open</span></li>
+              </ul>
+              <a class="btn btn--ghost" href="#features">Learn more
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#arrow-right" /></svg
+              ></a>
+            </article>
+            <article class="card feature-card">
+              <p class="feature-card__icon" aria-hidden="true">
+                <svg class="icon"><use href="assets/icons/sprite.svg#users" /></svg>
+              </p>
+              <h3>Win-back flows</h3>
+              <p>Kind, automatic messages that bring missed visits back to your calendar.</p>
+              <a class="btn btn--ghost" href="#features">Learn more
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#arrow-right" /></svg
+              ></a>
+            </article>
+            <article class="card feature-card">
+              <p class="feature-card__icon" aria-hidden="true">
+                <svg class="icon"><use href="assets/icons/sprite.svg#shield-check" /></svg>
+              </p>
+              <h3>Deposit &amp; policy links</h3>
+              <p>Share your cancellation policy and take deposits for high-risk slots.</p>
+              <a class="btn btn--ghost" href="#features">Learn more
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#arrow-right" /></svg
+              ></a>
+            </article>
+            <article class="card feature-card">
+              <p class="feature-card__icon" aria-hidden="true">
+                <svg class="icon"><use href="assets/icons/sprite.svg#star" /></svg>
+              </p>
+              <h3>Simple reports</h3>
+              <p>See no-shows, refills and recovered revenue on one calm page.</p>
+              <a class="btn btn--ghost" href="#features">Learn more
+                <svg class="icon icon--sm" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#arrow-right" /></svg
+              ></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries -->
+      <section class="section" aria-labelledby="industries-title" id="industries">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Industries</p>
+            <h2 id="industries-title">Made for your kind of business.</h2>
+            <p>Pick your trade. The details change, the calm stays.</p>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Industries" data-tabs>
+            <button class="tab" type="button" role="tab" id="tab-dental" aria-selected="true" aria-controls="panel-dental" data-tab="dental">Dental</button>
+            <button class="tab" type="button" role="tab" id="tab-salon" aria-selected="false" aria-controls="panel-salon" data-tab="salon" tabindex="-1">Salon</button>
+            <button class="tab" type="button" role="tab" id="tab-gym" aria-selected="false" aria-controls="panel-gym" data-tab="gym" tabindex="-1">Gym &amp; Studio</button>
+            <button class="tab" type="button" role="tab" id="tab-clinic" aria-selected="false" aria-controls="panel-clinic" data-tab="clinic" tabindex="-1">Clinic</button>
+          </div>
+          <div class="split" id="panel-dental" role="tabpanel" aria-labelledby="tab-dental" data-tab-panel="dental">
+            <div>
+              <h3>Long chairs, high value, never empty.</h3>
+              <ul class="industry-panel__points">
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Recall reminders bring patients back every 6 months.
+                </li>
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Long, high-value visits get extra confirmation steps.
+                </li>
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Pre-visit forms arrive with the reminder link.
+                </li>
+              </ul>
+              <p class="result-callout"><strong>−41% missed appointments</strong>Typical result · Illustrative</p>
+            </div>
+            <div class="industry-visual" aria-hidden="true">
+              <ul class="schedule__list">
+                <li class="slot slot--booked"><span class="slot__time">9:00</span><span>Root canal</span></li>
+                <li class="slot slot--refilled"><span class="slot__time">11:30</span><span>Refilled</span>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles" /></svg>
+                </li>
+                <li class="slot slot--booked"><span class="slot__time">14:00</span><span>Check-up</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="split" id="panel-salon" role="tabpanel" aria-labelledby="tab-salon" data-tab-panel="salon" hidden>
+            <div>
+              <h3>Every stylist chair filled by tonight.</h3>
+              <ul class="industry-panel__points">
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Stylist-specific waitlists fill gaps with the right clients.
+                </li>
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Last-minute openings go out in seconds.
+                </li>
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Deposits protect long color appointments.
+                </li>
+              </ul>
+              <p class="result-callout"><strong>+22 rebooked gaps a month</strong>Typical result · Illustrative</p>
+            </div>
+            <div class="industry-visual" aria-hidden="true">
+              <ul class="schedule__list">
+                <li class="slot slot--booked"><span class="slot__time">10:00</span><span>Cut · Lena</span></li>
+                <li class="slot slot--refilled"><span class="slot__time">13:00</span><span>Refilled</span>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles" /></svg>
+                </li>
+                <li class="slot slot--open"><span class="slot__time">16:30</span><span>Open</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="split" id="panel-gym" role="tabpanel" aria-labelledby="tab-gym" data-tab-panel="gym" hidden>
+            <div>
+              <h3>Every mat spoken for.</h3>
+              <ul class="industry-panel__points">
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Cancelled class spots auto-promote the waitlist.
+                </li>
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Late-cancel windows enforced kindly, automatically.
+                </li>
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Trial-class no-shows get a friendly follow-up.
+                </li>
+              </ul>
+              <p class="result-callout"><strong>3 min to refill a class</strong>Typical result · Illustrative</p>
+            </div>
+            <div class="industry-visual" aria-hidden="true">
+              <ul class="schedule__list">
+                <li class="slot slot--booked"><span class="slot__time">7:00</span><span>HIIT · Full</span></li>
+                <li class="slot slot--refilled"><span class="slot__time">8:00</span><span>Refilled</span>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles" /></svg>
+                </li>
+                <li class="slot slot--booked"><span class="slot__time">18:00</span><span>Yoga · Full</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="split" id="panel-clinic" role="tabpanel" aria-labelledby="tab-clinic" data-tab-panel="clinic" hidden>
+            <div>
+              <h3>A calmer waiting room.</h3>
+              <ul class="industry-panel__points">
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Patients confirm with one reply — no app needed.
+                </li>
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Reschedule links stop the phone queues.
+                </li>
+                <li>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Reminders in your clients' language.
+                </li>
+              </ul>
+              <p><span class="badge">Arabic &amp; English messages</span></p>
+              <p class="result-callout"><strong>92% reminders read</strong>Typical result · Illustrative</p>
+            </div>
+            <div class="industry-visual" aria-hidden="true">
+              <ul class="schedule__list">
+                <li class="slot slot--booked"><span class="slot__time">9:15</span><span>Confirmed</span></li>
+                <li class="slot slot--booked"><span class="slot__time">10:45</span><span>Confirmed</span></li>
+                <li class="slot slot--refilled"><span class="slot__time">12:15</span><span>Refilled</span>
+                  <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles" /></svg>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="section section--dark" aria-labelledby="results-title">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Results</p>
+            <h2 id="results-title">Calmer days. Fuller calendars.</h2>
+          </div>
+          <ul class="stats">
+            <li class="stat">
+              <strong data-countup data-target="38" data-prefix="−" data-suffix="%">−38%</strong>
+              <span>no-shows</span>
+            </li>
+            <li class="stat">
+              <strong data-countup data-target="92" data-suffix="%">92%</strong>
+              <span>reminders read</span>
+            </li>
+            <li class="stat">
+              <strong data-countup data-target="3" data-suffix=" min">3 min</strong>
+              <span>avg. to refill a slot</span>
+            </li>
+            <li class="stat">
+              <strong data-countup data-target="1240" data-prefix="+$" data-group="true">+$1,240</strong>
+              <span>recovered per month (avg.)</span>
+            </li>
+          </ul>
+          <p class="footnote">Illustrative placeholder figures for this concept project.</p>
+          <div class="carousel" data-carousel>
+            <figure class="quote" data-carousel-slide="1">
+              <blockquote>Our chairs used to sit empty every Tuesday. Now cancellations refill before my coffee cools.</blockquote>
+              <figcaption>Dr. Layla H. — Dental clinic owner</figcaption>
+              <p class="fiction-tag">Fictional example</p>
+            </figure>
+            <figure class="quote" data-carousel-slide="2" hidden>
+              <blockquote>Clients actually reply to the reminders. My front desk finally leaves on time.</blockquote>
+              <figcaption>Marcus T. — Salon owner</figcaption>
+              <p class="fiction-tag">Fictional example</p>
+            </figure>
+            <figure class="quote" data-carousel-slide="3" hidden>
+              <blockquote>Trial classes fill themselves from the waitlist. I stopped chasing no-shows for good.</blockquote>
+              <figcaption>Priya S. — Studio manager</figcaption>
+              <p class="fiction-tag">Fictional example</p>
+            </figure>
+            <div class="carousel__controls">
+              <button class="carousel__arrow" type="button" data-carousel-prev aria-label="Previous testimonial">
+                <svg class="icon" aria-hidden="true" style="transform: rotate(180deg)">
+                  <use href="assets/icons/sprite.svg#arrow-right" />
+                </svg>
+              </button>
+              <div class="carousel__dots">
+                <button class="dot" type="button" data-carousel-dot="1" aria-current="true" aria-label="Show testimonial 1"></button>
+                <button class="dot" type="button" data-carousel-dot="2" aria-current="false" aria-label="Show testimonial 2"></button>
+                <button class="dot" type="button" data-carousel-dot="3" aria-current="false" aria-label="Show testimonial 3"></button>
+              </div>
+              <button class="carousel__arrow" type="button" data-carousel-next aria-label="Next testimonial">
+                <svg class="icon" aria-hidden="true">
+                  <use href="assets/icons/sprite.svg#arrow-right" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison -->
+      <section class="section" aria-labelledby="compare-title">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Comparison</p>
+            <h2 id="compare-title">Slotwise vs. doing it by hand.</h2>
+            <p>The short version: hours of chasing, or one calm page.</p>
+          </div>
+          <table class="compare">
+            <thead>
+              <tr>
+                <th scope="col">Task</th>
+                <th scope="col">By hand / spreadsheets</th>
+                <th scope="col">Slotwise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Reminders sent</th>
+                <td data-label="By hand / spreadsheets">
+                  <svg class="icon icon--sm no" aria-hidden="true"><use href="assets/icons/sprite.svg#x" /></svg>
+                  Calls, when there is time
+                </td>
+                <td data-label="Slotwise">
+                  <svg class="icon icon--sm yes" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Automatic SMS, WhatsApp &amp; email
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Confirmations tracked</th>
+                <td data-label="By hand / spreadsheets">
+                  <svg class="icon icon--sm no" aria-hidden="true"><use href="assets/icons/sprite.svg#x" /></svg>
+                  Sticky notes and memory
+                </td>
+                <td data-label="Slotwise">
+                  <svg class="icon icon--sm yes" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Every reply tracked
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Cancelled slots refilled</th>
+                <td data-label="By hand / spreadsheets">
+                  <svg class="icon icon--sm no" aria-hidden="true"><use href="assets/icons/sprite.svg#x" /></svg>
+                  Often stays empty
+                </td>
+                <td data-label="Slotwise">
+                  <svg class="icon icon--sm yes" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Offered to the waitlist in seconds
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Win-back messages</th>
+                <td data-label="By hand / spreadsheets">
+                  <svg class="icon icon--sm no" aria-hidden="true"><use href="assets/icons/sprite.svg#x" /></svg>
+                  Rarely sent
+                </td>
+                <td data-label="Slotwise">
+                  <svg class="icon icon--sm yes" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Automatic, kind nudges
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Time spent per week</th>
+                <td data-label="By hand / spreadsheets">
+                  <svg class="icon icon--sm no" aria-hidden="true"><use href="assets/icons/sprite.svg#x" /></svg>
+                  6+ hours
+                </td>
+                <td data-label="Slotwise">
+                  <svg class="icon icon--sm yes" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  Minutes
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Cost</th>
+                <td data-label="By hand / spreadsheets">
+                  <svg class="icon icon--sm no" aria-hidden="true"><use href="assets/icons/sprite.svg#x" /></svg>
+                  Staff hours add up
+                </td>
+                <td data-label="Slotwise">
+                  <svg class="icon icon--sm yes" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+                  From $29/mo
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Integrations -->
+      <section class="section section--alt" aria-labelledby="integrations-title" id="integrations">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Integrations</p>
+            <h2 id="integrations-title">Works with the tools you already use.</h2>
+            <p>Connect in minutes. No tech skills needed.</p>
+          </div>
+          <ul class="apps">
+            <li class="app">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#calendar" /></svg>
+              Google Calendar
+            </li>
+            <li class="app">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#calendar-check" /></svg>
+              Outlook Calendar
+            </li>
+            <li class="app">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#message-circle" /></svg>
+              WhatsApp
+            </li>
+            <li class="app">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#zap" /></svg>
+              SMS
+            </li>
+            <li class="app">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#check" /></svg>
+              Email
+            </li>
+            <li class="app">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#clock" /></svg>
+              Webhooks
+            </li>
+            <li class="app">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#users" /></svg>
+              Make.com
+            </li>
+            <li class="app">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="assets/icons/sprite.svg#star" /></svg>
+              CSV import
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Pricing teaser -->
+      <section class="section" aria-labelledby="teaser-title">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Pricing</p>
+            <h2 id="teaser-title">Pays for itself in a week.</h2>
+            <p>One recovered appointment usually covers it.</p>
+          </div>
+          <div class="grid grid--3 teaser-grid">
+            <article class="card teaser">
+              <h3>Starter</h3>
+              <p class="teaser__price">from $24/mo</p>
+              <p class="text-secondary">1 location · 150 reminders a month</p>
+            </article>
+            <article class="card teaser teaser--popular">
+              <p><span class="badge badge--coral">Most popular</span></p>
+              <h3>Growth</h3>
+              <p class="teaser__price">from $66/mo</p>
+              <p class="text-secondary">WhatsApp · waitlist auto-refill · win-backs</p>
+            </article>
+            <article class="card teaser">
+              <h3>Pro</h3>
+              <p class="teaser__price">from $132/mo</p>
+              <p class="text-secondary">Up to 5 locations · deposits · priority support</p>
+            </article>
+          </div>
+          <p class="teaser__more">
+            <a class="btn btn--secondary" href="/pricing.html">See full pricing
+              <svg class="icon icon--sm" aria-hidden="true">
+                <use href="assets/icons/sprite.svg#arrow-right" /></svg
+            ></a>
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section--alt" aria-labelledby="faq-title" id="faq">
+        <div class="container">
+          <div class="section-head" style="margin-inline: auto; text-align: center">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">Everything owners ask us.</h2>
+            <p>Short answers, no jargon.</p>
+          </div>
+          <div class="faq" data-faq>
+            <div class="faq__item">
+              <h3>
+                <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-a1" id="faq-q1" data-faq-button>
+                  Do my clients need to download an app?
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down" /></svg>
+                </button>
+              </h3>
+              <div class="faq__answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+                <p>No. They reply to a message or tap a link. Nothing to install.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3>
+                <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2" data-faq-button>
+                  Which calendars and booking tools does it connect to?
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down" /></svg>
+                </button>
+              </h3>
+              <div class="faq__answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+                <p>Google Calendar and Outlook today, plus CSV import and webhooks for anything else.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3>
+                <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3" data-faq-button>
+                  Is WhatsApp allowed for reminders?
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down" /></svg>
+                </button>
+              </h3>
+              <div class="faq__answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+                <p>Yes, using approved message templates through the official business channels.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3>
+                <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4" data-faq-button>
+                  How long does setup take?
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down" /></svg>
+                </button>
+              </h3>
+              <div class="faq__answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+                <p>Most businesses are live in an afternoon. Connect a calendar, set your timings, done.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3>
+                <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5" data-faq-button>
+                  Can I customize the messages?
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down" /></svg>
+                </button>
+              </h3>
+              <div class="faq__answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+                <p>Yes. Tone, wording, language and timing are all yours to set.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3>
+                <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6" data-faq-button>
+                  What happens to my clients' data?
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down" /></svg>
+                </button>
+              </h3>
+              <div class="faq__answer" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden>
+                <p>It's encrypted in transit and at rest. You can export or delete it any time.</p>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3>
+                <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7" data-faq-button>
+                  Can I cancel anytime?
+                  <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down" /></svg>
+                </button>
+              </h3>
+              <div class="faq__answer" id="faq-a7" role="region" aria-labelledby="faq-q7" hidden>
+                <p>Yes. No contracts and no lock-in.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="section" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta-panel">
+            <h2 id="cta-title">
+              Fill your
+              <span class="squiggle"
+                >calendar<svg viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true">
+                  <path
+                    d="M2 8C20 2 40 10 60 6s40-3 58 1"
+                    fill="none"
+                    stroke="#E5502F"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                  /></svg
+              ></span>, not your inbox.
+            </h2>
+            <p>Try Slotwise free for 14 days.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--primary btn--large" href="/book-demo.html?plan=trial">Start free trial</a>
+              <a class="btn btn--secondary btn--large" href="/book-demo.html">Book a 15-min demo</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/" aria-label="Slotwise home">
+              <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="33" height="33" rx="9" fill="#FBF7F0" />
+                <rect x="8" y="9" width="20" height="5" rx="2.5" fill="#0E3B34" />
+                <rect x="8" y="15.5" width="20" height="5" rx="2.5" fill="#F4694C" />
+                <rect x="8" y="22" width="12" height="5" rx="2.5" fill="#2F7D70" />
+              </svg>
+              <span class="brand__word" data-brand-name>Slotwise</span>
+            </a>
+            <p class="site-footer__pitch">Fewer empty chairs. More booked days.</p>
+            <p class="site-footer__locale">Made in Doha</p>
+          </div>
+
+          <nav aria-label="Product">
+            <h2 class="site-footer__heading">Product</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="/#how">How it works</a></li>
+              <li><a class="site-footer__link" href="/#features">Features</a></li>
+              <li><a class="site-footer__link" href="/pricing.html">Pricing</a></li>
+              <li><a class="site-footer__link" href="/#integrations">Integrations</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Industries">
+            <h2 class="site-footer__heading">Industries</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="/#industries">Dental</a></li>
+              <li><a class="site-footer__link" href="/#industries">Salon</a></li>
+              <li><a class="site-footer__link" href="/#industries">Gym</a></li>
+              <li><a class="site-footer__link" href="/#industries">Clinic</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Company">
+            <h2 class="site-footer__heading">Company</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="/book-demo.html">Book a demo</a></li>
+              <li><a class="site-footer__link" href="/privacy.html">Privacy</a></li>
+              <li><a class="site-footer__link" href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>© <span data-brand-year>2026</span> <span data-brand-name>Slotwise</span></p>
+          <p data-concept-notice>
+            Concept project. All names, figures and testimonials are fictional placeholders.
+          </p>
+          <span class="lang-chip" aria-label="Language: English">
+            <svg class="icon icon--sm" aria-hidden="true">
+              <use href="assets/icons/sprite.svg#globe" />
+            </svg>
+            EN
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

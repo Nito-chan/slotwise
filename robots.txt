@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://slotwise.vercel.app/sitemap.xml

@@ -1,0 +1,206 @@
+/* Slotwise base: reset, typography, utilities. Loaded after tokens.css. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--ink-900);
+  background-color: var(--cream-100);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-wrap: balance;
+  color: var(--pine-950);
+}
+
+h1 {
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  font-weight: 700;
+}
+
+p {
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+body > p,
+main p {
+  color: var(--ink-900);
+}
+
+small {
+  font-size: var(--text-small);
+  line-height: var(--leading-small);
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+::selection {
+  background: var(--sun-100);
+  color: var(--pine-950);
+}
+
+/* Visible focus on every interactive element (§13b).
+   Two layers: dark outline for contrast on light surfaces,
+   sun halo (per §4.6) that carries visibility on dark surfaces. */
+:focus-visible {
+  outline: 3px solid var(--pine-900);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--sun-400);
+  border-radius: 4px;
+}
+
+/* Anchors stop below the sticky nav. */
+[id] {
+  scroll-margin-top: var(--anchor-offset);
+}
+
+/* Skip link */
+.skip-link {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: var(--z-skip);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--pine-950);
+  color: var(--cream-50);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-220%);
+  transition: transform var(--duration-ui) var(--ease);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* Screen-reader-only text */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Eyebrow label used above every H2 (§5). */
+.eyebrow {
+  font-size: var(--text-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  line-height: 1.4;
+  color: var(--pine-700);
+}
+
+/* Muted / secondary copy */
+.text-secondary {
+  color: var(--ink-600);
+}
+
+.text-muted {
+  color: var(--ink-400);
+}
+
+/* Unstyled list helper */
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Lock body scroll while the mobile drawer is open. */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Reduced motion: show content immediately, no smooth scroll or transforms. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

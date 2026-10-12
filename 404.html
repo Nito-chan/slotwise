@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slotwise — Page not found</title>
+    <meta
+      name="description"
+      content="This slot is empty. The page you wanted isn't booked here."
+    />
+    <meta name="theme-color" content="#0E3B34" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <script type="module" defer src="assets/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-nav-sentinel aria-hidden="true"></div>
+
+    <header class="site-nav" data-site-nav>
+      <div class="container site-nav__inner">
+        <a class="brand" href="/" aria-label="Slotwise home">
+          <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="33" height="33" rx="9" fill="#0E3B34" />
+            <rect x="8" y="9" width="20" height="5" rx="2.5" fill="#FBF7F0" />
+            <rect x="8" y="15.5" width="20" height="5" rx="2.5" fill="#F4694C" />
+            <rect x="8" y="22" width="12" height="5" rx="2.5" fill="#D8EBE6" />
+          </svg>
+          <span class="brand__word" data-brand-name>Slotwise</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul class="site-nav__links">
+            <li><a class="site-nav__link" href="/#how">Product</a></li>
+            <li><a class="site-nav__link" href="/#industries">Industries</a></li>
+            <li><a class="site-nav__link" href="/pricing.html">Pricing</a></li>
+            <li><a class="site-nav__link" href="/#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-nav__actions">
+          <a class="site-nav__login" href="#">Log in</a>
+          <a class="btn btn--primary" href="/book-demo.html?plan=trial">Start free trial</a>
+        </div>
+
+        <button
+          class="site-nav__toggle"
+          type="button"
+          data-drawer-open
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+          aria-label="Open menu"
+        >
+          <svg class="icon" aria-hidden="true">
+            <use href="assets/icons/sprite.svg#menu" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="drawer" data-drawer hidden>
+      <div class="drawer__backdrop" data-drawer-backdrop></div>
+      <div
+        class="drawer__panel"
+        data-drawer-panel
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
+        id="mobile-drawer"
+      >
+        <div class="drawer__head">
+          <a class="brand" href="/" aria-label="Slotwise home">
+            <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+              <rect x="1.5" y="1.5" width="33" height="33" rx="9" fill="#0E3B34" />
+              <rect x="8" y="9" width="20" height="5" rx="2.5" fill="#FBF7F0" />
+              <rect x="8" y="15.5" width="20" height="5" rx="2.5" fill="#F4694C" />
+              <rect x="8" y="22" width="12" height="5" rx="2.5" fill="#D8EBE6" />
+            </svg>
+            <span class="brand__word" data-brand-name>Slotwise</span>
+          </a>
+          <button
+            class="drawer__close"
+            type="button"
+            data-drawer-close
+            aria-label="Close menu"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons/sprite.svg#x" />
+            </svg>
+          </button>
+        </div>
+        <nav class="drawer__nav" aria-label="Mobile">
+          <a class="drawer__link" href="/#how">Product</a>
+          <a class="drawer__link" href="/#industries">Industries</a>
+          <a class="drawer__link" href="/pricing.html">Pricing</a>
+          <a class="drawer__link" href="/#faq">FAQ</a>
+        </nav>
+        <div class="drawer__foot">
+          <a class="btn btn--primary btn--large" href="/book-demo.html?plan=trial"
+            >Start free trial</a
+          >
+          <a class="btn btn--secondary" href="#">Log in</a>
+        </div>
+      </div>
+    </div>
+
+    <main id="main">
+      <div class="container oops">
+        <p class="oops__mark" aria-hidden="true">?</p>
+        <h1>This slot is empty.</h1>
+        <p>The page you wanted isn't booked here.</p>
+        <a class="btn btn--primary btn--large" href="/">Back to home</a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="brand" href="/" aria-label="Slotwise home">
+              <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="33" height="33" rx="9" fill="#FBF7F0" />
+                <rect x="8" y="9" width="20" height="5" rx="2.5" fill="#0E3B34" />
+                <rect x="8" y="15.5" width="20" height="5" rx="2.5" fill="#F4694C" />
+                <rect x="8" y="22" width="12" height="5" rx="2.5" fill="#2F7D70" />
+              </svg>
+              <span class="brand__word" data-brand-name>Slotwise</span>
+            </a>
+            <p class="site-footer__pitch">Fewer empty chairs. More booked days.</p>
+            <p class="site-footer__locale">Made in Doha</p>
+          </div>
+
+          <nav aria-label="Product">
+            <h2 class="site-footer__heading">Product</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="/#how">How it works</a></li>
+              <li><a class="site-footer__link" href="/#features">Features</a></li>
+              <li><a class="site-footer__link" href="/pricing.html">Pricing</a></li>
+              <li><a class="site-footer__link" href="/#integrations">Integrations</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Industries">
+            <h2 class="site-footer__heading">Industries</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="/#industries">Dental</a></li>
+              <li><a class="site-footer__link" href="/#industries">Salon</a></li>
+              <li><a class="site-footer__link" href="/#industries">Gym</a></li>
+              <li><a class="site-footer__link" href="/#industries">Clinic</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Company">
+            <h2 class="site-footer__heading">Company</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="/book-demo.html">Book a demo</a></li>
+              <li><a class="site-footer__link" href="/privacy.html">Privacy</a></li>
+              <li><a class="site-footer__link" href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>© <span data-brand-year>2026</span> <span data-brand-name>Slotwise</span></p>
+          <p data-concept-notice>
+            Concept project. All names, figures and testimonials are fictional placeholders.
+          </p>
+          <span class="lang-chip" aria-label="Language: English">
+            <svg class="icon icon--sm" aria-hidden="true">
+              <use href="assets/icons/sprite.svg#globe" />
+            </svg>
+            EN
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
